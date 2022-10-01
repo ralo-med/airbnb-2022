@@ -10,3 +10,4 @@ class HouseAdmin(admin.ModelAdmin):
     )
     list_filter = ("price","pet_friendly")
     search_fields= ("address",)
+    list_editable= ("pet_friendly",)

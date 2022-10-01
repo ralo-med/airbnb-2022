@@ -11,6 +11,7 @@ class House(models.Model):
     price = models.PositiveIntegerField()
     description = models.TextField()
     address = models.CharField(max_length=140)
-
+    pet_friendly = models.BooleanField(default=False,)
+    
     def __str__(self):
         return self.name

@@ -23,6 +23,13 @@ class RoomAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     )
+    search_fields = (
+        "name",
+        "=price",
+        # exact 다
+        "^owner__username",
+        # starts_with 다
+    )
 
 
 @admin.register(Amenity)

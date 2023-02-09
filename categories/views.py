@@ -13,7 +13,11 @@ def categories(request):
     elif request.method == "POST":
         serializer = CategorySerializer(data=request.data)
         if serializer.is_valid():
-            return Response({"created": True})
+            new_category = serializer.save()
+            # Python 객체를 받았고 이를 JSON으로 다시 받고 response로 보내주는 것이다!
+            return Response(
+                CategorySerializer(new_category).data,
+            )
         else:
             return Response(serializer.errors)
 

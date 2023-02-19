@@ -6,6 +6,7 @@ from rest_framework.exceptions import ParseError, NotFound
 from . import serializers
 from .models import User
 from django.contrib.auth import authenticate, login, logout
+from medias.serializers import PhotoSerializer
 
 
 class Me(APIView):
